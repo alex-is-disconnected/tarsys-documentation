@@ -1,13 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/tooltip.css" />
+    <title>TARSYS</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <div id="homepage-wrapper">
+      <nav id="index-nav">
+        <button
+          id="button1"
+          class="homepage-button button-bkg trigger"
+          data-tooltip="tooltip-sword"
+          data-effect="effect3"
+        >
+          <span class="highlight">SWORD</span>
+        </button>
+        <div id="cicada">
+          SHEATH<br />
+          OF <br />TARSYS
+        </div>
+
+        <button
+          id="button2"
+          class="homepage-button button-bkg trigger"
+          data-tooltip="tooltip-shield"
+          data-effect="effect3"
+        >
+          <span class="highlight">SHIELD</span>
+        </button>
+      </nav>
+    </div>
+
+    <div id="metaball-parent">
+      <canvas id="metaballs"></canvas>
+    </div>
+
+    <script type="module" src="js/homepage-setup.js"></script>
   </body>
 </html>
