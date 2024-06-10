@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TARSYS - REF</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/sheath.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <div id="ref-parent">
+      <p>[ REFUSAL ]</p>
+
+      <article>
+        <div class="begin-line"></div>
+        <p>WHAT INSPIRED TARSYS?</p>
+        <div class="begin-line"></div>
+      </article>
+      <div class="ref-container">
+        <span>I</span>
+        <article>
+          <div style="margin-top: 0; margin-bottom: 0" class="begin-line"></div>
+          <p style="font-weight: 700">
+            Internet access is a fundamental human right
+          </p>
+          <p>
+            TARSYS arose from my personal feelings of loathing when it came to
+            the control surrounding the distribution and access of information.
+          </p>
+          <p class="p-dent">
+            Especially when it regarded those who controlled internet access and
+            those who were stripped of their right to access the internet and
+            its information.
+          </p>
+          <div style="margin-top: 0; margin-bottom: 0" class="begin-line"></div>
+        </article>
+      </div>
+
+      <div class="ref-container">
+        <figure>
+          <img src="assets/media/palestine.png" />
+          <figcaption>Palestinians denied their information</figcaption>
+        </figure>
+      </div>
+      <div class="ref-container">
+        <span>II</span>
+        <article>
+          <p>
+            It truly pains me to see these situations where people are denied
+            their information. I refuse to accept any such situations and sought
+            to resolve them.
+          </p>
+          <p class="p-dent">
+            These situations are unacceptable and exist because people are not
+            in control of the systems that distribute their information.
+          </p>
+          <p class="p-dent"></p>
+        </article>
+      </div>
+
+      <div class="ref-container">
+        <figure>
+          <img src="assets/media/pakistan.png" />
+          <figcaption>Pakistani mobile network shutdown</figcaption>
+        </figure>
+      </div>
+
+      <div class="ref-container">
+        <span>III</span>
+        <article>
+          <div style="margin-top: 0; margin-bottom: 0" class="begin-line"></div>
+          <p style="text-align: left">
+            Thus, TARSYS is a reclamation of this right, our right, to
+            distribute digital information through our own means.
+          </p>
+          <div style="margin-bottom: 0" class="begin-line"></div>
+        </article>
+      </div>
+
+      <div class="ref-container">
+        <figure>
+          <img src="assets/media/facebook.png" />
+          <figcaption>
+            Facebook's control of information incited genocide
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div id="net-map">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        height="52"
+        width="52"
+        id="Hierarchy-2--Streamline-Sharp"
+      >
+        <desc>Hierarchy 2 Streamline Icon: https://streamlinehq.com</desc>
+        <g id="Hierarchy-2--Streamline-Sharp">
+          <path
+            id="Union"
+            fill="#b75b42"
+            fill-rule="evenodd"
+            d="M15 2H9v6h2v3H3v5H1v6h6v-6H5v-3h6v3H9v6h6v-6h-2v-3h6v3h-2v6h6v-6h-2v-5h-8V8h2V2Z"
+            clip-rule="evenodd"
+            stroke-width="1"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <nav id="app-nav">
+      <section id="inner-area">
+        <a id="sword-nav" class="button-bkg" href="commandments.html">
+          <span class="highlight">[ COMMANDMENTS ]</span>
+        </a>
+        <a id="shield-nav" class="button-bkg" href="overview.html">
+          <span class="highlight">[ OVERVIEW ]</span>
+        </a>
+        <a id="shield-nav" class="button-bkg" href="refusal.html">
+          <span class="highlight">[ REFUSAL ]</span>
+        </a>
+
+        <a id="home-nav" class="button-bkg" href="diy.html">
+          <span class="highlight">[ DIY ]</span>
+        </a>
+
+        <a id="home-nav" class="button-bkg" href="index.html">
+          <span class="highlight">[ HOME ]</span>
+        </a>
+      </section>
+
+      <script>
+        const netMap = document.getElementById("net-map");
+        const appNav = document.getElementById("app-nav");
+        let state;
+
+        netMap.addEventListener("click", () => {
+          appNav.classList.toggle("wide-nav");
+          if (state === false) {
+            document.addEventListener("click", docNavClose);
+            state = true;
+          } else {
+            document.removeEventListener("click", docNavClose);
+            state = false;
+          }
+          state = !state;
+          console.log("hi");
+        });
+
+        function docNavClose() {
+          appNav.classList.remove("wide-nav");
+        }
+      </script>
+    </nav>
+
+    <style>
+      #ref-parent {
+        display: flex;
+        gap: 3em;
+        flex-direction: column;
+        margin-top: 4em;
+        padding-bottom: 2em;
+      }
+      #ref-parent > article {
+        width: fit-content;
+      }
+      .ref-container {
+        display: flex;
+        margin-left: 6em;
+      }
+
+      .ref-container > article {
+        display: grid;
+        grid-template-columns: 36em;
+        gap: 1em;
+      }
+
+      article > p {
+        margin: 0 0.5em;
+      }
+
+      span {
+        width: 6em;
+      }
+
+      li {
+        margin-left: 2em;
+        margin-bottom: 0.5em;
+      }
+
+      ol {
+        margin-bottom: 0;
+      }
+
+      .p-dent {
+        text-indent: 24px;
+      }
+
+      @media (max-width: 1000px) {
+        #ref-parent {
+          padding: 1em;
+        }
+
+        .ref-container {
+          margin-left: 0;
+          flex-direction: column;
+          gap: 1em;
+          padding: 0.5em;
+        }
+
+        .ref-container > article {
+          grid-template-columns: 1fr;
+        }
+
+        article > p {
+          margin: 1em 0em 0em 0em;
+        }
+
+        figure {
+          margin: -1.5em;
+          width: auto;
+          max-width: 100vw;
+        }
+        figcaption {
+          text-align: left;
+          margin-left: 1em;
+        }
+
+        #net-map {
+          top: 1.5em;
+          left: 1.5em;
+        }
+
+        #app-nav {
+          top: 5.5em;
+        }
+      }
+    </style>
+  </body>
+</html>

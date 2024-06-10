@@ -10,39 +10,97 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/sheath.css" />
     <link rel="stylesheet" href="css/tooltip.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>TARSYS</title>
   </head>
-  <body>
+  <body style="overflow: hidden">
     <div id="homepage-wrapper">
       <nav id="index-nav">
-        <button
-          id="button1"
-          class="homepage-button button-bkg trigger"
-          data-tooltip="tooltip-sword"
-          data-effect="effect3"
-        >
-          <span class="highlight">SWORD</span>
-        </button>
-        <div id="cicada">
-          SHEATH<br />
-          OF <br />TARSYS
+        <div id="center-area">
+          <div id="cicada">
+            TARSYS
+            <p>AN ALTERNATIVE INTERNET</p>
+          </div>
+          <div id="site-map">
+            <a
+              href="commandments.html"
+              class="trigger"
+              data-tooltip="tooltip-comm"
+              data-effect="effect3"
+              >[ COMMANDMENTS ]</a
+            >
+            <a
+              href="overview.html"
+              class="trigger"
+              data-tooltip="tooltip-over"
+              data-effect="effect3"
+              >[ OVERVIEW ]</a
+            >
+            <a
+              href="refusal.html"
+              class="trigger"
+              data-tooltip="tooltip-ref"
+              data-effect="effect3"
+              >[ REFUSAL ]</a
+            >
+            <a
+              href="diy.html"
+              class="trigger"
+              data-tooltip="tooltip-diy"
+              data-effect="effect3"
+              >[ DIY ]</a
+            >
+          </div>
         </div>
-
-        <button
-          id="button2"
-          class="homepage-button button-bkg trigger"
-          data-tooltip="tooltip-shield"
-          data-effect="effect3"
-        >
-          <span class="highlight">SHIELD</span>
-        </button>
       </nav>
     </div>
 
-    <div id="metaball-parent">
-      <canvas id="metaballs"></canvas>
+    <div id="tooltips">
+      <div id="tooltip-comm" class="tooltip" data-rows="6" data-cols="20">
+        <div class="tooltip__bg"></div>
+        <div class="tooltip__content">
+          <h3 class="tooltip__content-title">
+            <span class="black-highlight">COMMANDMENTS</span>
+          </h3>
+          <p class="tooltip__content-desc">
+            The guiding principles behind TARSYS
+          </p>
+        </div>
+      </div>
+
+      <div id="tooltip-over" class="tooltip" data-rows="6" data-cols="20">
+        <div class="tooltip__bg"></div>
+        <div class="tooltip__content">
+          <h3 class="tooltip__content-title">
+            <span class="black-highlight">OVERVIEW</span>
+          </h3>
+          <p class="tooltip__content-desc">General TARSYS information</p>
+        </div>
+      </div>
+
+      <div id="tooltip-ref" class="tooltip" data-rows="6" data-cols="20">
+        <div class="tooltip__bg"></div>
+        <div class="tooltip__content">
+          <h3 class="tooltip__content-title">
+            <span class="black-highlight">REFUSAL</span>
+          </h3>
+          <p class="tooltip__content-desc">
+            The provocation that caused TARSYS
+          </p>
+        </div>
+      </div>
+
+      <div id="tooltip-diy" class="tooltip" data-rows="6" data-cols="20">
+        <div class="tooltip__bg"></div>
+        <div class="tooltip__content">
+          <h3 class="tooltip__content-title">
+            <span class="black-highlight">DIY</span>
+          </h3>
+          <p class="tooltip__content-desc">Passing on the Torch of TARSYS</p>
+        </div>
+      </div>
     </div>
 
     <script type="module" src="js/homepage-setup.js"></script>

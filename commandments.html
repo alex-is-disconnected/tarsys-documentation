@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TARSYS - COMMANDMENTS</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/sheath.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <div id="comm-parent">
+      <p>[ COMMANDMENTS ]</p>
+
+      <article>
+        <div class="begin-line"></div>
+        <p>
+          I have the unfortunate tendency of being bound by principles in my
+          approach.
+        </p>
+        <p>
+          These are the ones that served as the ground work for this project.
+        </p>
+        <div class="begin-line"></div>
+      </article>
+      <div class="comm-container">
+        <span>I</span>
+        <article>
+          <p>Must be completely functional</p>
+          <p>
+            I wasn't interested in making a product for aesthetic or speculative
+            purposes. I knew that I wanted whatever I had made to be a real,
+            working piece of software that does what is intended to do.
+          </p>
+        </article>
+      </div>
+      <div class="comm-container">
+        <span>II</span>
+        <article>
+          <p>Create an alternative to the internet</p>
+          <p>
+            The root issue I wanted to tackle was my qualms with the internet as
+            a system. This is explored further in the "REFUSAL" page but in
+            short, I wanted to make a tool that could distribute information
+          </p>
+        </article>
+      </div>
+      <div class="comm-container">
+        <span>III</span>
+        <article>
+          <p>Give people the means to share information</p>
+          <p>
+            Ultimately, the goal of TARSYS was to bring the means of
+            communicating back into the hands of the people. With that in mind,
+            it had to be a flexible application in the sense that people could
+            use it however they saw fit.
+          </p>
+        </article>
+      </div>
+      <div class="comm-container">
+        <span>IV</span>
+        <article>
+          <p>Cannot use the internet in its operation</p>
+          <p>
+            Given that the grounding idea of TARSYS was to circumvent the
+            systems of the internet, it didn't make sense to use the internet in
+            its operation. How can you defeat a system by still using it?
+          </p>
+        </article>
+      </div>
+      <div class="comm-container">
+        <span>V</span>
+        <article>
+          <p>Manifests as distributable software</p>
+          <p>
+            With TARSYS being a means of undermining and subverting pre-existing
+            methods of communication, there is a very high likeihood that there
+            would be agents that would wish for it's downfall. Thus, existing as
+            distributable software gives it staying power, as people can
+            repeatedly share the software and not stamp it out.
+          </p>
+        </article>
+      </div>
+    </div>
+    <div id="net-map">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        height="52"
+        width="52"
+        id="Hierarchy-2--Streamline-Sharp"
+      >
+        <desc>Hierarchy 2 Streamline Icon: https://streamlinehq.com</desc>
+        <g id="Hierarchy-2--Streamline-Sharp">
+          <path
+            id="Union"
+            fill="#b75b42"
+            fill-rule="evenodd"
+            d="M15 2H9v6h2v3H3v5H1v6h6v-6H5v-3h6v3H9v6h6v-6h-2v-3h6v3h-2v6h6v-6h-2v-5h-8V8h2V2Z"
+            clip-rule="evenodd"
+            stroke-width="1"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <nav id="app-nav">
+      <section id="inner-area">
+        <a id="sword-nav" class="button-bkg" href="commandments.html">
+          <span class="highlight">[ COMMANDMENTS ]</span>
+        </a>
+        <a id="shield-nav" class="button-bkg" href="overview.html">
+          <span class="highlight">[ OVERVIEW ]</span>
+        </a>
+        <a id="shield-nav" class="button-bkg" href="refusal.html">
+          <span class="highlight">[ REFUSAL ]</span>
+        </a>
+
+        <a id="home-nav" class="button-bkg" href="diy.html">
+          <span class="highlight">[ DIY ]</span>
+        </a>
+
+        <a id="home-nav" class="button-bkg" href="index.html">
+          <span class="highlight">[ HOME ]</span>
+        </a>
+      </section>
+
+      <script>
+        const netMap = document.getElementById("net-map");
+        const appNav = document.getElementById("app-nav");
+        let state;
+
+        netMap.addEventListener("click", () => {
+          appNav.classList.toggle("wide-nav");
+          if (state === false) {
+            document.addEventListener("click", docNavClose);
+            state = true;
+          } else {
+            document.removeEventListener("click", docNavClose);
+            state = false;
+          }
+          state = !state;
+          console.log("hi");
+        });
+
+        function docNavClose() {
+          appNav.classList.remove("wide-nav");
+        }
+      </script>
+    </nav>
+
+    <style>
+      #comm-parent {
+        display: flex;
+        gap: 3em;
+        flex-direction: column;
+        margin-top: 4em;
+        padding-bottom: 2em;
+      }
+      #comm-parent > article {
+        width: fit-content;
+      }
+      .comm-container {
+        display: flex;
+        margin-left: 6em;
+      }
+
+      .comm-container > article {
+        display: grid;
+        grid-template-columns: 12em 28em;
+        gap: 0 1em;
+      }
+
+      article > p {
+        margin: 0 0.5em;
+      }
+
+      span {
+        width: 6em;
+      }
+
+      @media (max-width: 1000px) {
+        #comm-parent {
+          padding: 1em;
+        }
+
+        .comm-container {
+          margin-left: 0;
+          flex-direction: column;
+          gap: 1em;
+          padding: 0.5em;
+        }
+
+        .comm-container > article {
+          grid-template-columns: 1fr;
+        }
+
+        article > p {
+          margin: 1em 0em 0em 0em;
+        }
+
+        #net-map {
+          top: 1.5em;
+          left: 1.5em;
+        }
+
+        #app-nav {
+          top: 5.5em;
+        }
+      }
+    </style>
+  </body>
+</html>

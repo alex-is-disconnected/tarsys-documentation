@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TARSYS - DIY</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/sheath.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <div id="diy-parent">
+      <p>[ DIY ]</p>
+
+      <article>
+        <div class="begin-line"></div>
+        <p>PASSING ON THE TARSYS LEGACY</p>
+        <div class="begin-line"></div>
+      </article>
+
+      <div class="diy-container">
+        <span>+</span>
+        <article>
+          <div style="margin-top: 0; margin-bottom: 0" class="begin-line"></div>
+          <p style="text-align: left;">
+            With a project like TARSYS, it is vital that others are able to learn how it works.
+          </p>
+          <p class="p-dent">
+            It can effectively give the project immortality, so that it may continue its work after a potential shutdown.
+          </p>
+          <div class="begin-line"></div>
+        </article>
+      </div>
+
+      <article>
+        <div class="begin-line"></div>
+        <p>SYSTEM DESIGN</p>
+        <div class="begin-line"></div>
+      </article>
+
+      <div class="diy-container">
+        <article>
+          <div class="begin-line"></div>
+          <p style="text-align: left;">
+            To understand TARSYS, let's look at its constitutent parts
+          </p>
+          <div class="begin-line"></div>
+        </article>
+      </div>
+
+      <div class="diy-container">
+        <span>I</span>
+        <article>
+          <p>
+            SHEATH is:
+            <ol>
+            <li>A desktop application using <a href="https://www.electronjs.org/">Electron</a></li>
+            <li>Utilizes <a href="https://github.com/pokusew/nfc-pcsc#basic-usage">nfc-pcsc</a> for NFC integration</li>
+            <li>Implements a <a href="https://www.amazon.com/ETEKJOY-ACR122U-13-56MHz-Contactless-Writable/dp/B07FCLY4S9">ACR122U</a> USB NFC reader to communicate with TARCELs</li>
+          </ol>
+          </p>
+          <p class="p-dent">Frankly, SHEATH can be greatly improved. nfc-pcsc is a bit outdated and incompatible with the newest version of Node.js. This can make installation rather nightmarish. So it might be better to talk about the code in a general sense so the logic may be applied in other languages.</p>
+          <p class="p-dent">If you are curious as to the Javascript implementation, the project GitHub can be found <a href="https://github.com/alex-is-disconnected/sheath">here</a>.</p>
+          <p class="p-dent">NFC communication is a technology that is more reasonably achieved in non-Node environments. Nonetheless, the steps for interfacing with the cards will be the same, so the logic can still apply.</p>
+        </article>
+      </div>
+
+      <div class="diy-container">
+        <span>II</span>
+        <article>
+          <p>
+            TARCELs are:
+            <ol>
+            <li><a href="https://www.amazon.com/YARONGTECH-MIFARE-DESFire-Cards-Functional/dp/B01FR6GZQY?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AVRYNBZDYQMCY">MIFARE DESFire EV3 8KB</a> NFC cards</li>
+            <li>Can go up to 32KB of storage</li>
+            <li>PVC Plastic</li>
+            <li>3.375 in. (85.6mm) x 2.125 in. (53.98mm)</li>
+          </ol>
+          </p>
+          <p class="p-dent">There are a wide variety of different NFC chip types available for purchase and use. However, the DESFire platform was specifically useful for two main features: storage capacity and memory flexibility.</p>
+          <p class="p-dent">DESFire chips can store the most memory of any NFC chip, which is the most essential feature for our use case. There are also other chips with high storage but that memory is not flexible (namely, MIFARE Classic). This means that a lot of the memory isn't actually useable and is heavily partioned and separated. DESFire is not like this and we can structure our data pretty freely, being able to use up nearly all of the card's actual storage however we see fit.</p>
+          <p class="p-dent">However, there are some drawbacks. The DESFire, in standard applications, is highly praised for its security features. In order to maintain this, all of the documentation is behind a heavy NDA. Thus, finding the information necessary to work on the card can be extremely difficult.</p>
+          <p class="p-dent">Yet, there is hope.</p>
+        </article>
+      </div>
+
+      <article>
+        <div class="begin-line"></div>
+        <p>A SHINING LIGHT</p>
+        <div class="begin-line"></div>
+      </article>
+
+      <div class="diy-container">
+        <span>III</span>
+        <article>
+          <p>This is the part where I state my immense gratitude to the NFC open-source community.</p>
+          <p class="p-dent">I won't link it here for fear of takedown, but there is a Holy Grail document that perfectly outlines all of the necessary information to work with MIFARE DESFire cards on GitHub.</p>
+          <p class="p-dent">The document is fully reverse-engineered, so you will not break NDA by using and referring to it. It also states that it is for EV1, but has worked fine (so far) for my use of EV3.</p>
+          <p class="p-dent">Should one wish to find it, Googling MIFARE DESFire PDF seems to work.</p>
+        </article>
+      </div>
+
+      <div class="diy-container">
+      <span>IV</span>
+      <article>
+        <p>The other crucial aspect of working with DESFire cards specifically is how you authenticate with them. It's a very specific sequence of steps that must be done exactly in order to do ANY sort of operation on the card.</p>
+        <p class="p-dent">Of course, the steps for doing exactly that in Javascript just so happens to be perfectly documented in an example code in the nfc-pcsc GitHub. These steps must be done prior to any command sent to the card, or else nothing will happen.</p>
+      </article>
+    </div>
+
+      <div class="diy-container">
+        <article>
+          <div class="begin-line"></div>
+          <p style="text-align: left;">
+            I also wish to mention that the margin of error for this project is INCREDIBLY slim. Had it not been for these two masterpieces of the NFC dev community, this project could not exist.  My deepest gratitude to all those involved.          </p>
+          <div class="begin-line"></div>
+        </article>
+      </div>
+
+      <article>
+        <div class="begin-line"></div>
+        <p>EXTRAPOLATION AND EXTENSION</p>
+        <div class="begin-line"></div>
+      </article>
+
+      <div class="diy-container">
+        <span>+</span>
+        <article>
+          <p>Now, there are some additional bits and pieces of information that should be mentioned so as to make the process a bit easier to understand.</p>
+        </article>
+      </div>
+
+      <div class="diy-container">
+        <span>V</span>
+        <article>
+          <p>For one, NFC cards store binary data. This means that each single character is stored as a number from 0 to 255, like an "R" value in a RGB color. Now, these numbers are easily interpretable for computers but humans, not so much. Thus, it is essential that you convert these numbers into hexadecimal or ASCII.</p>
+        </article>
+      </div>
+
+      <div class="diy-container">
+        <span>VI</span>
+        <article>
+
+          <p>Note that all of the commands and status codes in the DESFire.pdf are referred to in hexadecimal format. As for sending these commands, look at the example in the nfc-pcsc GitHub. That example specifically mentions reading from a DESFire card. If we browse the code, we see that it (in the try {}) selects an application, gets the key, authenticates with the key and then reads the data. Notice how for each of these functions, the code uses the send() command with a parameter of "0x" followed by a hexadecimal number.</p>
+
+        </article>
+      </div>
+
+      <div class="diy-container">
+        <span>VII</span>
+        <article>
+          <p>This is the essential method of sending commands to the card. All of the commands can be found in the PDF but, effectivelly, you are just sending a special hexadecimal number that then triggers the action in the card. This can be select application (0x5A), read data (0xBD), and so on and so forth.</p>
+        </article>
+      </div>
+
+      <div class="diy-container">
+        <span>VIII</span>
+        <article>
+          <p>A peculiar detail that is also extremely important: DESFire EV3s can read a maximum of 256 bytes in a single command and only write a maximum of 55 bytes. Thus, if more data needs to be read or written then you would have to loop repeatedly in chunks of 256 or 55 bytes respectively.</p>
+        </article>
+      </div>
+
+      <div class="diy-container">
+        <span>IX</span>
+        <article>
+          <p>The DESFire storage structure is based on files and applications. The storage is first broken up into one or more applications. Then, each application can have multiple files for storing information.</p>
+          <p>When working with the card, you choose a particular application and you work with that specific application until you change. For this project it makes sense to work with a single application and file so that you can use the full storage capacity. Of course, this can be customized as you see fit.</p>
+          <p>Each application has a specific key/ID represented by 3 bytes. I recommend using the :Get Application IDs" command (0x6A) and then this allows you to just keep the default application key with a single file, making for the simplest and most efficient workflow.</p>
+        </article>
+      </div>
+
+      <div class="diy-container">
+        <span>X</span>
+        <article>
+          <p>NXP (the manufacturing company behind the chips) offets their own mobile apps for working with their chips. I HIGHLY recommend using these as they can offer a lot of useful information without needing much work on your end.</p>
+          <p>For one, you can list all of the data on a DESFire card and how it is structured regarding the applications and files.</p>
+          <p>Another crucial factor is formatting as NDEF. This is EXTREMELY important and can be a source of errors. When working with a newly purchased card, it may be necessary to format it as NDEF to allow it to work. This process is very simple to do when using the NXP app and just involves a simple buttton tap.</p>
+        </article>
+      </div>
+
+      <div class="diy-container">
+        <span>XI</span>
+        <article>
+          <p>Also, as general rule, Android devices are superior to iOS devices regarding NFC technology. It is far less restricted and can make working with NFC cards much easier.</p>
+          <p>The NXP apps on Android are far more robust than the iOS ones.</p>
+        </article>
+      </div>
+    </div>
+    <div id="net-map">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        height="52"
+        width="52"
+        id="Hierarchy-2--Streamline-Sharp"
+      >
+        <desc>Hierarchy 2 Streamline Icon: https://streamlinehq.com</desc>
+        <g id="Hierarchy-2--Streamline-Sharp">
+          <path
+            id="Union"
+            fill="#b75b42"
+            fill-rule="evenodd"
+            d="M15 2H9v6h2v3H3v5H1v6h6v-6H5v-3h6v3H9v6h6v-6h-2v-3h6v3h-2v6h6v-6h-2v-5h-8V8h2V2Z"
+            clip-rule="evenodd"
+            stroke-width="1"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <nav id="app-nav">
+      <section id="inner-area">
+        <a id="sword-nav" class="button-bkg" href="commandments.html">
+          <span class="highlight">[ COMMANDMENTS ]</span>
+        </a>
+        <a id="shield-nav" class="button-bkg" href="overview.html">
+          <span class="highlight">[ OVERVIEW ]</span>
+        </a>
+        <a id="shield-nav" class="button-bkg" href="refusal.html">
+          <span class="highlight">[ REFUSAL ]</span>
+        </a>
+
+        <a id="home-nav" class="button-bkg" href="diy.html">
+          <span class="highlight">[ DIY ]</span>
+        </a>
+
+        <a id="home-nav" class="button-bkg" href="index.html">
+          <span class="highlight">[ HOME ]</span>
+        </a>
+      </section>
+
+      <script>
+        const netMap = document.getElementById("net-map");
+        const appNav = document.getElementById("app-nav");
+        let state;
+
+        netMap.addEventListener("click", () => {
+          appNav.classList.toggle("wide-nav");
+          if (state === false) {
+            document.addEventListener("click", docNavClose);
+            state = true;
+          } else {
+            document.removeEventListener("click", docNavClose);
+            state = false;
+          }
+          state = !state;
+          console.log("hi");
+        });
+
+        function docNavClose() {
+          appNav.classList.remove("wide-nav");
+        }
+      </script>
+    </nav>
+
+    <style>
+      #diy-parent {
+        display: flex;
+        gap: 3em;
+        flex-direction: column;
+        margin-top: 4em;
+        padding-bottom: 2em;
+      }
+      #diy-parent > article {
+        width: fit-content;
+      }
+      .diy-container {
+        display: flex;
+        margin-left: 6em;
+      }
+
+      .diy-container > article {
+        display: grid;
+        grid-template-columns: 36em;
+        gap: 1em;
+      }
+
+      article > p {
+        margin: 0 0.5em;
+      }
+
+      span {
+        width: 6em;
+      }
+
+      li {
+        margin-left: 2em;
+        margin-bottom: 0.5em;
+      }
+
+      ol {
+        margin-bottom: 0;
+      }
+
+      .p-dent {
+        text-indent: 24px;
+      }
+
+      @media (max-width: 1000px) {
+        #diy-parent {
+          padding: 1em;
+        }
+
+        .diy-container {
+          margin-left: 0;
+          flex-direction: column;
+          gap: 1em;
+          padding: 0.5em;
+        }
+
+        .diy-container > article {
+          grid-template-columns: 1fr;
+        }
+
+        article > p {
+          margin: 1em 0em 0em 0em;
+        }
+
+        figure {
+          margin: -1.5em;
+          width: auto;
+          max-width: 100vw;
+        }
+        figcaption {
+          text-align: left;
+          margin-left: 1em;
+        }
+
+        #net-map {
+          top: 1.5em;
+          left: 1.5em;
+        }
+
+        #app-nav {
+          top: 5.5em;
+        }
+      }
+    </style>
+  </body>
+</html>
