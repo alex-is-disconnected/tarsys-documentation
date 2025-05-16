@@ -35,12 +35,15 @@ body {
 }
 
 #site-map {
-  display: none;
+  display: flex;
+  visibility: hidden;
   flex-direction: column;
   width: 0;
+  height: 0;
   overflow: hidden;
   gap: 0.25em;
   transition: width 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: height 1s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
 #cicada {

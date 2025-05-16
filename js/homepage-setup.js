@@ -138,9 +138,10 @@ function loadHomepage() {
         asciiWrapper.style.opacity = "1";
         setTimeout(() => {
           setTimeout(() => {
-            siteMap.style.display = "flex";
+            siteMap.style.visibility = "visible";
             setTimeout(() => {
               siteMap.style.width = "220px";
+              siteMap.style.height = "103px";
             }, 400);
           }, 750);
         }, 3000);
@@ -153,10 +154,11 @@ function loadHomepage() {
       setTimeout(() => {
         asciiWrapper.style.opacity = "1";
         setTimeout(() => {
-          siteMap.style.display = "flex";
+          siteMap.style.visibility = "visible";
           setTimeout(() => {
             setTimeout(() => {
               siteMap.style.width = "220px";
+              siteMap.style.height = "103px";
             }, 1);
           }, 1);
         }, 1);
